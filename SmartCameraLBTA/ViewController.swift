@@ -5,7 +5,7 @@
 //  Created by Brian Voong on 7/12/17.
 //  Copyright © 2017 Lets Build That App. All rights reserved.
 //
-//testing
+
 import UIKit
 import AVKit
 import Vision
@@ -70,7 +70,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         // !!!Important
-        // make sure to go download the models at https://developer.apple.com/machine-learning/ scroll to the bottom 
+        // make sure to go download the models at https://developer.apple.com/machine-learning/ scroll to the bottom
+        
+        //Testing
+        
         guard let model = try? VNCoreMLModel(for: MLKotaTuaV3().model) else { return }
         
         let request = VNCoreMLRequest(model: model) { (finishedReq, err) in
